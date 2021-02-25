@@ -1,0 +1,7 @@
+vscode/*
+code/__pycache__/*
+code/MNIST_data/*
+code/0.2.2
+dataset/mnistm_data.pkl
+MNIST_data/*
+.ipynb_checkpoints/*
