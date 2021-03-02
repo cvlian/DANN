@@ -5,7 +5,9 @@ A Tensorflow implementation of **Domain Adversarial Neural Networks** (DANN, in 
 ---
 ## What is Domain Adapatation?
 
-**Domain adaptation** is a field associated with **transfer learning**.
+**Domain adaptation** is a field associated with **transfer learning**. The goal of domain adaptation is to address the discrepancy in domain distribution between source and target dataset. When the feature spaces of the two domains are different, your model trained on one domain (source) could be biased toward that domain, eventually could not be fit another domain (target). Especially, when we aim at employing a pre-trained model for the prediction of an **unlabeled data**, it won't guarantee good performance. 
+
+This scenario is quite common in practice. For example, you may train your algorithm on MNIST (source) and evaluate it on MNIST-M (target), a modified version of MNIST. As you can see from the below images, the samples from MNIST-M have both similarities and differences compared to the MNIST sample images. The MNIST-M images keep the original digit shape, so it can be regarded as a domain-independent feature. On the contrary, the non-uniform background, which makes the appearances of MNIST-M samples significantly different from those of MNIST images can be seen as domain-dependent information. For a human, the digits from the target dataset are still clearly distinguishable. For a model trained on MNIST, however, it perceives the given target data in different fashions since the background pixels are no longer constant. The background color brings clouded judgment, consequently, the model performs poorly. To cope with change in the data distribution, a model demands a capability of picking up the domain-independent features beneficial for adapting unseen data. Devising models that can handle this kind of challenge is exactly the problem called domain adaptation.
 
 <p align="center"><img src="./img/idea.png" width="480" height="360"/></p></br>
 
